@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_app/config/themes/app_theme.dart';
+import 'package:widgets_app/presentation/screens/home/home_screen.dart';
 
 // IMPORANTE AL EMPEZAR EL PROYECTO
 // CORRER  en la terminal para inicializar el proyecto en el repositorio
@@ -26,13 +28,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+      theme:AppTheme(selectedColor: 9).getTheme(),
+      home: const HomeScreen()      
+      );
   }
 }

@@ -8,6 +8,14 @@ import 'package:flutter/material.dart';
 3. git commit -m "first commit"
 */
 // o desde el vs con view control source ctrl+shift +G
+/* no es recomendable trabajar en la rama main, pero para saber donde estoy
+poner en la terminal el command "git status"
+en este caso nos vamos a mover a otra rama llamada 01-bases
+para ello en la terminal escribimos el command "git checkout -b 01-bases"
+al terminar todo unimos la rama 01-bases a la rama main (production) que es la final siempre.
+si algo se daño y queremos volver a la ultima version de commit estable
+usar el comando git checkout -- .
+*/
 
 void main() {
   runApp(const MainApp());

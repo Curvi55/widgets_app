@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_app/config/menu/menu_items.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,6 +11,62 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Flutter + Material 3'),
         centerTitle: false,
       ),
+      body: _HomeView(),
+
+      );
+    
+  }
+}
+
+class _HomeView extends StatelessWidget {
+  const _HomeView( );
+
+   
+  @override
+  Widget build(BuildContext context) {
+
+    appMenuItems; // definida en menu_items.dart
+
+    return ListView.builder(
+      //physics:const BouncingScrollPhysics(),
+      
+      itemCount: appMenuItems.length,
+      itemBuilder: (context,index) {
+        MenuItem menuItem = appMenuItems[index];  
+        return  _CustomListTile(menuItem: menuItem);         
+      }
+      );
+  }
+}
+
+class _CustomListTile extends StatelessWidget {
+  
+  final MenuItem menuItem;
+
+  const _CustomListTile({
+    required this.menuItem,
+  });
+
+// en esta seccion se agrego un nuevo SETUP para crear codigo automaticos (macro)
+// cart + shift + P ; user snipper / dart
+// uso escribir themes.of y completa el codigo
+
+  @override
+  Widget build(BuildContext context) {
+   // con la config de arriba se typea theme-of y se selcciona del menu y completa el codigo
+   final colors = Theme.of(context).colorScheme;
+
+    return ListTile(
+      tileColor: Colors.white,
+      textColor: colors.primary,          
+      leading: Icon(menuItem.icon, color:colors.primary),
+      trailing:  Icon(Icons.arrow_forward_ios_rounded, color:colors.primary),
+      title: Text(menuItem.title),
+      subtitle:Text(menuItem.subTitle) ,
+      // evento de cuando se toca
+      onTap: (){
+        // TODO: navegar a otras pantallas
+      },
     );
   }
 }

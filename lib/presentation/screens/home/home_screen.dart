@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
 import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
+import 'package:widgets_app/presentation/screens/screens.dart';
 
 class HomeScreen extends StatelessWidget {
+
+  // esta propiedad name es para trabajar con go_router, es static porque no 
+  // se quiere crear una instancia de esta clase solo para saber el nombre
+  static const String name ='home_screen';
+
   const HomeScreen({super.key});
 
   @override
@@ -13,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Flutter + Material 3'),
         centerTitle: false,
       ),
-      body: _HomeView(),
+      body: const _HomeView(),
 
       );
     
@@ -79,6 +85,9 @@ class _CustomListTile extends StatelessWidget {
           // forma alternativa para hacer la navegacion, aunque la oficial recomendada go_router
           //Navigator.pushNamed(context, menuItem.link);
           // intead of go , usemos push, para poder devolvernos
+          
+          // como alternativa se puede usar el nombre en vez del path abajo el ejemplo
+          //context.pushNamed(CardsScreen.name);
           context.push(menuItem.link);
       },
     );

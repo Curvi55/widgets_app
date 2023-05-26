@@ -34,6 +34,7 @@ class MainApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    
     // notese que se le agrega router al MaterialApp
     return MaterialApp.router(
       routerConfig: appRouter, // se connecta ahora con el router definido en app_router.dart

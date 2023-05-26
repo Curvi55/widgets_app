@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_app/config/router/app_router.dart';
 import 'package:widgets_app/config/themes/app_theme.dart';
+/* ya despuesd de definir las rutas en app_router.dart no se necesita importarlas 1 a 1
+
 import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 import 'package:widgets_app/presentation/screens/home/home_screen.dart';
+*/
 
 // IMPORANTE AL EMPEZAR EL PROYECTO
 // CORRER  en la terminal para inicializar el proyecto en el repositorio
@@ -30,14 +34,19 @@ class MainApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    // notese que se le agrega router al MaterialApp
+    return MaterialApp.router(
+      routerConfig: appRouter, // se connecta ahora con el router definido en app_router.dart
       debugShowCheckedModeBanner: false,
       theme:AppTheme(selectedColor: 9).getTheme(),
+      /*
       home: const HomeScreen(),
+        FLUTTER recomienda utilizar go_router en vez de este tipo de routing
       routes: {
         '/buttons': (context) => const ButtonsScreen(),
         '/cards':(context) => const CardsScreen()
-      }
+      } */
+
 
       );
   }

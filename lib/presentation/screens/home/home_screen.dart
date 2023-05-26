@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
 import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 
@@ -76,7 +77,9 @@ class _CustomListTile extends StatelessWidget {
              ),
           ); */
           // forma alternativa para hacer la navegacion, aunque la oficial recomendada go_router
-          Navigator.pushNamed(context, menuItem.link);
+          //Navigator.pushNamed(context, menuItem.link);
+          // intead of go , usemos push, para poder devolvernos
+          context.push(menuItem.link);
       },
     );
   }

@@ -1,0 +1,7 @@
+"Color scheme": {
+    "prefix": "theme-of-context",
+    "body": [
+        "final colors = theme.of(context).colorScheme;",
+     ],
+     "description": "Create the reference to the colors"
+}  

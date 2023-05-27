@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
+import 'package:flutter/services.dart';
 import 'package:widgets_app/config/router/app_router.dart';
 import 'package:widgets_app/config/themes/app_theme.dart';
 /* ya despuesd de definir las rutas en app_router.dart no se necesita importarlas 1 a 1
@@ -25,9 +27,17 @@ si algo se daño y queremos volver a la ultima version de commit estable
 usar el comando git checkout -- .
 */
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  ByteData data =
+      await PlatformAssetBundle().load('assets/ca/lets-encrypt-r3.pem');
+  SecurityContext.defaultContext
+      .setTrustedCertificatesBytes(data.buffer.asUint8List());
+
   runApp(const MainApp());
 }
+
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});

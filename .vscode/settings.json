@@ -8,9 +8,10 @@
         
         "[Monokai Night]": {
             "editor.foreground": "#b0f2b4", 
-            "editor.selectionBackground": "#008800",
-            "terminal.foreground": "#00AA00",
-            "editorCursor.foreground":"#f3eff5",            
+            "editor.selectionBackground": "#070000",
+            "editor.selectionForeground": "#fdfdfd",
+            "terminal.foreground": "#7f06f9",
+            "editorCursor.foreground":"#f9f8fa",            
             //"textBlockQuote.border":"#fcf300"
             
             "textLink.activeForeground":"#FFFFFF"
@@ -19,11 +20,5 @@
 		}
     },
 
-    "editor.tokenColorCustomizations": {
-            "[Monokai Night]": {
-                "comments": "#229977",
-                //"keywords": "F00",
-                "string":"#227c9d"
-            }
-    }
+
 }

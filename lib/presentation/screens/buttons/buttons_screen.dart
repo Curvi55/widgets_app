@@ -97,7 +97,42 @@ class _ButtonsView extends StatelessWidget {
                  splashFactory: InkSparkle.splashFactory
                )
             ),
+            const CustomButton(),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+// boton desde 0 , customizado / personalizado
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    final colors = Theme.of(context).colorScheme;
+
+    // se envuelve  ahora Material con clipRRect para hacer bordes redondos.
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Material(
+        color: colors.primary,
+        //Inkwell es como un gestore detector para botones
+        // reacciona cuando tienes un splash method
+        
+     
+        child: InkWell(
+        
+          onTap: () {},
+          //splashFactory: InkSparkle.constantTurbulenceSeedSplashFactory,
+          child: const Padding(
+            
+            padding: EdgeInsets.symmetric(horizontal:20, vertical:10),
+            child: Text('customized',style: TextStyle(color: Colors.white)),
+            ),
         ),
       ),
     );

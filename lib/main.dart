@@ -41,7 +41,7 @@ class MainApp extends StatelessWidget {
       routerConfig: appRouter, // se connecta ahora con el router definido en app_router.dart
       
       debugShowCheckedModeBanner: false,
-      theme:AppTheme(selectedColor: 3).getTheme(),
+      theme:AppTheme(selectedColor: 0).getTheme(),
       /*
       home: const HomeScreen(),
         FLUTTER recomienda utilizar go_router en vez de este tipo de routing

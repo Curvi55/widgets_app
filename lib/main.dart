@@ -36,10 +36,12 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     
     // notese que se le agrega router al MaterialApp
-    return MaterialApp.router(
+    return MaterialApp.router(  //estilo de go_router
+
       routerConfig: appRouter, // se connecta ahora con el router definido en app_router.dart
+      
       debugShowCheckedModeBanner: false,
-      theme:AppTheme(selectedColor: 9).getTheme(),
+      theme:AppTheme(selectedColor: 3).getTheme(),
       /*
       home: const HomeScreen(),
         FLUTTER recomienda utilizar go_router en vez de este tipo de routing

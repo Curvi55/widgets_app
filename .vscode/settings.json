@@ -1,0 +1,29 @@
+    {
+
+    "workbench.preferredLightColorTheme": "Monokai Night",
+    "editor.suggest.showCustomcolors": true,
+    
+
+    "workbench.colorCustomizations": {
+        
+        "[Monokai Night]": {
+            "editor.foreground": "#b0f2b4", 
+            "editor.selectionBackground": "#008800",
+            "terminal.foreground": "#00AA00",
+            "editorCursor.foreground":"#f3eff5",            
+            //"textBlockQuote.border":"#fcf300"
+            
+            "textLink.activeForeground":"#FFFFFF"
+            
+            
+		}
+    },
+
+    "editor.tokenColorCustomizations": {
+            "[Monokai Night]": {
+                "comments": "#229977",
+                //"keywords": "F00",
+                "string":"#227c9d"
+            }
+    }
+}

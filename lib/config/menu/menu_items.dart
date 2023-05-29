@@ -32,13 +32,14 @@ class MenuItem {
         link:'/cards'  ,
         icon:Icons.credit_card
         ),
-/*
+
       const MenuItem(
-        title:'Tarjetas' ,
-        subTitle: 'Contenedor estilizado',
-        link:'/card'  ,
-        icon:Icons.credit_card
+        title:'Progress Indicators' ,
+        subTitle: 'Generales y controlados',
+        link:'/progress'  ,
+        icon:Icons.refresh_rounded
         ),
+        /*
       const MenuItem(
         title:'Tarjetas' ,
         subTitle: 'Contenedor estilizado',

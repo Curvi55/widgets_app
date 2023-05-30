@@ -49,6 +49,7 @@ class MainApp extends StatelessWidget {
     // notese que se le agrega router al MaterialApp
     return MaterialApp.router(  //estilo de go_router
 
+      title: 'Flutter Widgets', // este titulo se usa tambien en el showAboutDialog
       routerConfig: appRouter, // se connecta ahora con el router definido en app_router.dart
       
       debugShowCheckedModeBanner: false,

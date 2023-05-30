@@ -75,7 +75,7 @@ class _CardsView extends StatelessWidget {
                   // notese el uso de card y no la variable  cardS para referenciar el valor
                   label: card["label"],
                   elevation: card['elevation'])),
-          // para dejar un poco de espacio al final del scroll se podria agregar un Sizedbox
+          
 
 
            // para dejar un poco de espacio al final del scroll se podria agregar un Sizedbox

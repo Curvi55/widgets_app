@@ -39,13 +39,13 @@ class MenuItem {
         link:'/progress'  ,
         icon:Icons.refresh_rounded
         ),
-        /*
+        
       const MenuItem(
-        title:'Tarjetas' ,
-        subTitle: 'Contenedor estilizado',
-        link:'/card'  ,
-        icon:Icons.credit_card
-        ),
+        title:'Snackbars' ,
+        subTitle: 'Snackbars y Dialogos',
+        link:'/snackbars'  ,
+        icon:Icons.info_outlined
+        ),/*
       const MenuItem(
         title:'Tarjetas' ,
         subTitle: 'Contenedor estilizado',

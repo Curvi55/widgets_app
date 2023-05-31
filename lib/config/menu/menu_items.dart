@@ -45,13 +45,13 @@ class MenuItem {
         subTitle: 'Snackbars y Dialogos',
         link:'/snackbars'  ,
         icon:Icons.info_outlined
-        ),/*
-      const MenuItem(
-        title:'Tarjetas' ,
-        subTitle: 'Contenedor estilizado',
-        link:'/card'  ,
-        icon:Icons.credit_card
         ),
+      const MenuItem(
+        title:'Animated Container' ,
+        subTitle: 'Statefull widget animado',
+        link:'/animated'  ,
+        icon:Icons.check_box_outline_blank_outlined
+        ), /*
       const MenuItem(
         title:'Tarjetas' ,
         subTitle: 'Contenedor estilizado',

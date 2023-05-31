@@ -7,6 +7,91 @@ class UiControlsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('UI controls'), 
+        ),
+        body: const _UIControlsView()
+      );    
+  }
+}
+
+// para hacer que el switch cambie su estado, vamos a convertir el statelesswidget a stateful
+class _UIControlsView extends StatefulWidget {
+  const _UIControlsView();
+
+  @override
+  State<_UIControlsView> createState() => _UIControlsViewState();
+}
+
+// para el radioList tile
+enum Transportation {car, plane,boat, submarine}
+
+class _UIControlsViewState extends State<_UIControlsView> {
+
+
+  // una vez convertido a stateful declaramos la variable que queremos conservar el estado
+  bool isDeveloper = true;
+  // nos vamos a crear una propiedad de tipo transportation
+  Transportation selectedTransportation = Transportation.car;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      //vamos a quitar la fisica de rebote completamente
+      physics: const ClampingScrollPhysics(),
+      children: [
+        SwitchListTile(
+          title: Text('Developer Mode'),
+          subtitle: const Text('controles adicionales'),
+          value: isDeveloper, 
+          onChanged: (value)=> setState(() {
+            isDeveloper = !isDeveloper; // se le asigna el valor contrario al que tenia, switch ;)
+          })
+        ),
+        RadioListTile(          
+          title: const Text('By Car'),
+          subtitle: const Text('viaja por auto'),
+          value: Transportation.car, 
+          groupValue: selectedTransportation, // indica cual de las 3 opciones esta seleccionada
+           // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
+           onChanged: (value)=>setState(() {
+             selectedTransportation = Transportation.car;
+           })
+        ),
+
+        RadioListTile(
+            title: const Text('by Plane'),
+            subtitle: const Text('viaja por avión'),            
+            value: Transportation.plane,
+            groupValue:
+                selectedTransportation, // indica cual de las 3 opciones esta seleccionada
+            // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
+            onChanged: (value) => setState(() {
+                  selectedTransportation = Transportation.plane;
+                })),
+        RadioListTile(
+            title: const Text('by Boat'),
+            subtitle: const Text('viaja por bote'),            
+            value: Transportation.boat,
+            groupValue:
+                selectedTransportation, // indica cual de las 3 opciones esta seleccionada
+            // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
+            onChanged: (value) => setState(() {
+                  selectedTransportation = Transportation.boat;
+                })),
+        RadioListTile(
+            title: const Text('by Submarine'),
+            subtitle: const Text('viaja por Submarino'),            
+            value: Transportation.submarine,
+            groupValue:
+                selectedTransportation, // indica cual de las 3 opciones esta seleccionada
+            // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
+            onChanged: (value) => setState(() {
+                  selectedTransportation = Transportation.submarine;
+                })),
+
+      ],
+    );
   }
 }

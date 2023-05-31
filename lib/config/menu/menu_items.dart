@@ -51,13 +51,13 @@ class MenuItem {
         subTitle: 'Statefull widget animado',
         link:'/animated'  ,
         icon:Icons.check_box_outline_blank_outlined
-        ), /*
+        ), 
       const MenuItem(
-        title:'Tarjetas' ,
-        subTitle: 'Contenedor estilizado',
-        link:'/card'  ,
-        icon:Icons.credit_card
-        ),
+        title:'UI controls & tiles' ,
+        subTitle: 'Una serie de controles de Flutter',
+        link:'/ui-controls'  ,
+        icon:Icons.control_point_sharp
+        ), /*
       const MenuItem(
         title:'Tarjetas' ,
         subTitle: 'Contenedor estilizado',

@@ -57,13 +57,13 @@ class MenuItem {
         subTitle: 'Una serie de controles de Flutter',
         link:'/ui-controls'  ,
         icon:Icons.control_point_sharp
-        ), /*
+        ), 
       const MenuItem(
-        title:'Tarjetas' ,
-        subTitle: 'Contenedor estilizado',
-        link:'/card'  ,
-        icon:Icons.credit_card
-        ),
+        title:'App Tutorial' ,
+        subTitle: 'Introducción a la app',
+        link:'/tutorial'  ,
+        icon:Icons.system_security_update_good_sharp
+        ), /*
       const MenuItem(
         title:'Tarjetas' ,
         subTitle: 'Contenedor estilizado',

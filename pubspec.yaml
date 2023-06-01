@@ -22,3 +22,4 @@ flutter:
 # este .pem es para evitar el error de imagen.network, ver modificaciondel main para usar un certifado
   assets:
       - assets/ca/lets-encrypt-r3.pem
+      - assets/images/

@@ -34,6 +34,10 @@ class _UIControlsViewState extends State<_UIControlsView> {
   bool isDeveloper = true;
   // nos vamos a crear una propiedad de tipo transportation
   Transportation selectedTransportation = Transportation.car;
+  bool wantsBreakFast = false;
+  bool wantsLunch = false;
+  bool wantsDinner = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -49,47 +53,76 @@ class _UIControlsViewState extends State<_UIControlsView> {
             isDeveloper = !isDeveloper; // se le asigna el valor contrario al que tenia, switch ;)
           })
         ),
-        RadioListTile(          
-          title: const Text('By Car'),
-          subtitle: const Text('viaja por auto'),
-          value: Transportation.car, 
-          groupValue: selectedTransportation, // indica cual de las 3 opciones esta seleccionada
-           // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
-           onChanged: (value)=>setState(() {
-             selectedTransportation = Transportation.car;
-           })
-        ),
+        // dice FH que ExpansionTile es super super genial
+        ExpansionTile(
+          title: const Text('Vehículo de Transporte'),
+          subtitle: Text('$selectedTransportation'),
+          children: [
+             RadioListTile(
+                title: const Text('By Car'),
+                subtitle: const Text('viaja por auto'),
+                value: Transportation.car,
+                groupValue:
+                    selectedTransportation, // indica cual de las 3 opciones esta seleccionada
+                // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
+                onChanged: (value) => setState(() {
+                      selectedTransportation = Transportation.car;
+                    })),
+            RadioListTile(
+                title: const Text('by Plane'),
+                subtitle: const Text('viaja por avión'),
+                value: Transportation.plane,
+                groupValue:
+                    selectedTransportation, // indica cual de las 3 opciones esta seleccionada
+                // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
+                onChanged: (value) => setState(() {
+                      selectedTransportation = Transportation.plane;
+                    })),
+            RadioListTile(
+                title: const Text('by Boat'),
+                subtitle: const Text('viaja por bote'),
+                value: Transportation.boat,
+                groupValue:
+                    selectedTransportation, // indica cual de las 3 opciones esta seleccionada
+                // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
+                onChanged: (value) => setState(() {
+                      selectedTransportation = Transportation.boat;
+                    })),
+            RadioListTile(
+                title: const Text('by Submarine'),
+                subtitle: const Text('viaja por Submarino'),
+                value: Transportation.submarine,
+                groupValue:
+                    selectedTransportation, // indica cual de las 3 opciones esta seleccionada
+                // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
+                onChanged: (value) => setState(() {
+                      selectedTransportation = Transportation.submarine;
+                    })),
 
-        RadioListTile(
-            title: const Text('by Plane'),
-            subtitle: const Text('viaja por avión'),            
-            value: Transportation.plane,
-            groupValue:
-                selectedTransportation, // indica cual de las 3 opciones esta seleccionada
-            // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
+          ],
+          ),
+      
+          CheckboxListTile(
+            title: const Text('¿Desayuno?'),
+            value: wantsBreakFast, 
+            onChanged: (value)=> setState(() {
+              wantsBreakFast =!wantsBreakFast;
+            })
+          ),
+        CheckboxListTile(
+            title: const Text('Almuerzo?'),
+            value: wantsLunch,
             onChanged: (value) => setState(() {
-                  selectedTransportation = Transportation.plane;
-                })),
-        RadioListTile(
-            title: const Text('by Boat'),
-            subtitle: const Text('viaja por bote'),            
-            value: Transportation.boat,
-            groupValue:
-                selectedTransportation, // indica cual de las 3 opciones esta seleccionada
-            // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
+                  wantsLunch = !wantsLunch;
+                })
+        ),
+        CheckboxListTile(
+            title: const Text('¿Cena?'),
+            value: wantsDinner,
             onChanged: (value) => setState(() {
-                  selectedTransportation = Transportation.boat;
-                })),
-        RadioListTile(
-            title: const Text('by Submarine'),
-            subtitle: const Text('viaja por Submarino'),            
-            value: Transportation.submarine,
-            groupValue:
-                selectedTransportation, // indica cual de las 3 opciones esta seleccionada
-            // notese que dart sabe que este value es de tipo Transportation por lo que se le asigno antes
-            onChanged: (value) => setState(() {
-                  selectedTransportation = Transportation.submarine;
-                })),
+                  wantsDinner = !wantsDinner;
+        }))
+
 
       ],
     );

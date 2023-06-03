@@ -46,7 +46,7 @@ class _UIControlsViewState extends State<_UIControlsView> {
       physics: const ClampingScrollPhysics(),
       children: [
         SwitchListTile(
-          title: Text('Developer Mode'),
+          title: const Text('Developer Mode'),
           subtitle: const Text('controles adicionales'),
           value: isDeveloper, 
           onChanged: (value)=> setState(() {

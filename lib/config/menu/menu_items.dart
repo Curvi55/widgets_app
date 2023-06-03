@@ -63,13 +63,13 @@ class MenuItem {
         subTitle: 'Introducción a la app',
         link:'/tutorial'  ,
         icon:Icons.system_security_update_good_sharp
-        ), /*
+        ), 
       const MenuItem(
-        title:'Tarjetas' ,
-        subTitle: 'Contenedor estilizado',
-        link:'/card'  ,
-        icon:Icons.credit_card
-        ),
+        title:'Infinite scroll and Pull' ,
+        subTitle: 'Listas infinitas y pull to refresh',
+        link:'/infinite'  ,
+        icon:Icons.list_alt_rounded
+        ), /*
       const MenuItem(
         title:'Tarjetas' ,
         subTitle: 'Contenedor estilizado',
